@@ -1,11 +1,8 @@
 import ErrorHandler from "../utils/errorhandler.js";
 import catchAsyncErrors  from "./catchAsyncErrors.js";
-
 import jwt from "jsonwebtoken";
-import { useResolvedPath } from "react-router-dom";
 import user from "../model/userModel.js";
-import { serialize } from  "cookie-parse";
-import { getSingleUser }  from "../controllers/userController.js";
+
 
 export const isAuthenticatedUser = catchAsyncErrors( async(req , res, next)=>
 {
