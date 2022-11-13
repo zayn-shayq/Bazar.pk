@@ -1,13 +1,21 @@
-import express, { json } from "express";
+import express, { json} from "express";
+import bodyParser from "body-parser";
+import {} from 'dotenv/config';
 const app = express();
-import bodyParser from 'body-parser'
 
-app.use(bodyParser.json({extended: true}));
-app.use(bodyParser.urlencoded({extended: true}))
-import product from "./routes/productRoute.js";
 import error from "./middleware/error.js";
-app.use("/api/v1",product)
-app.use(error)
 
+app.use(express.json());
+app.use(bodyParser.json({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
+//Route imports
+import product from "./routes/productRoute.js";
+import user from "./routes/userRoute.js";
+
+app.use("/api/v1",product);
+app.use("/api/v1",user);
+
+//Middleware for errors
+app.use(error);
 
 export default app;
