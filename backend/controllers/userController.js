@@ -1,7 +1,7 @@
 import ErrorHandler from "../utils/errorhandler.js";
 import catchAsyncErrors from "../middleware/catchAsyncErrors.js";
 import User from "../model/userModel.js";
-//import sendToken from "../utils/jwtToken.js";
+import sendToken from "../utils/jwtToken.js";
 
 //Register a User
 export const registerUser =catchAsyncErrors( async (req,res,next)=>
@@ -18,13 +18,7 @@ export const registerUser =catchAsyncErrors( async (req,res,next)=>
     },
   });
 
-  const token = user.getJWTToken();
-
-  res.status(201).json({
-    success: true,
-    token,
-  });
-
+  sendToken(user, 201, res);
 });
 
 // Login User
@@ -49,10 +43,5 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
       return next(new ErrorHander("Invalid email or password", 401));
     }
   
-    const token = user.getJWTToken();
-
-    res.status(200).json({
-        success: true,
-        token,
-    })
+    sendToken(user, 200, res);
   });

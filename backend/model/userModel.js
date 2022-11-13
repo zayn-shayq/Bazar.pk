@@ -56,8 +56,8 @@ const userSchema = new mongoose.Schema({
 
    //JWT TOKEN
     userSchema.methods.getJWTToken = function () {
-    return jwt.sign({ id: this._id }, JWT_SECRET=DAFTDJGHJIWEF5678FWVVFJK7WF6EFVWGY33FGWHs, {
-expiresIn: JWT_EXPIRE=5,
+    return jwt.sign({ id: this._id },"DAFTDJGHJIWEF5678FWVVFJK7WF6EFVWGY33FGWHs", {
+expiresIn: 5,
     });
   };
 
