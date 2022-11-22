@@ -38,7 +38,7 @@ main {
 }
 
 .img-large {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 .img-thumbnail {
@@ -51,10 +51,10 @@ main {
 
 
 .checkout-steps > div {
-  border-bottom: 0.2rem solid #a0a0a0;
+  border-bottom: 0.2rem solid #330066;
   color: #a0a0a0;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #f08000;
-  color: #f08000;
+  border-bottom: 0.2rem solid #330066;
+  color: #330066;
 }
