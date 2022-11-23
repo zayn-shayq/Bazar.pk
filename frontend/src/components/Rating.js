@@ -1,8 +1,8 @@
 function Rating(props) {
     const { rating, numReviews } = props;
     return (
-      <div className="rating">
-        <span>
+      <div className="rating" data-testid = "Rating">
+        <span data-testid = "Rating for 1">
           <i
             className={
               rating >= 1
@@ -13,7 +13,7 @@ function Rating(props) {
             }
           />
         </span>
-        <span>
+        <span data-testid = "Rating for 2">
           <i
             className={
               rating >= 2
@@ -24,7 +24,7 @@ function Rating(props) {
             }
           />
         </span>
-        <span>
+        <span data-testid = "Rating for 3">
           <i
             className={
               rating >= 3
@@ -35,7 +35,7 @@ function Rating(props) {
             }
           />
         </span>
-        <span>
+        <span data-testid = "Rating for 4">
           <i
             className={
               rating >= 4
@@ -46,7 +46,7 @@ function Rating(props) {
             }
           />
         </span>
-        <span>
+        <span data-testid = "Rating for 5">
           <i
             className={
               rating >= 5
